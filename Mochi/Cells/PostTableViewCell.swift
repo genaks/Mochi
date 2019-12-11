@@ -29,12 +29,19 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gameImageView: UIImageView!
     
+    @IBOutlet weak var likesView: UIView!
+    
+    var postItem : Post!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         userImageView.layer.borderWidth = 2.0
         userImageView.layer.borderColor = UIColor.white.cgColor
         setUpPlayerLayer()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleLike(_:)))
+        likesView.addGestureRecognizer(tap)
     }
     
     func setUpPlayerLayer(){
@@ -55,19 +62,13 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configureCellForPost(post : Post) {
+        postItem = post
         videoPlayerItem = AVPlayerItem.init(url : post.video_url)
         usernameLabel.text = post.username;
         captionLabel.text = post.captionText;
-        likesLabel.text = "\(post.like_count ?? 0)"
         
-        gameImageView.image = UIImage(named: "DR_Banner")
-        
-        if post.liked! {
-            likeImageView.image = UIImage(named: "heart_filled")
-        }
-        else {
-            likeImageView.image = UIImage(named: "heart_outline")
-        }
+        gameImageView.image = UIImage(named: post.game_image_url!)
+        setLikesForPost(post: post)
         userImageView.image = UIImage(named: post.user_image_url!)
     }
     
@@ -88,6 +89,27 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @objc func toggleLike(_ sender: UITapGestureRecognizer? = nil) {
+        if postItem.liked! {
+            postItem.like_count! -= 1
+        }
+        else {
+            postItem.like_count! += 1
+        }
+        postItem.liked = !postItem.liked!
+        setLikesForPost(post: postItem)
+    }
+    
+    func setLikesForPost(post : Post) {
+        if post.liked! {
+            likeImageView.image = UIImage(named: "heart_filled")
+        }
+        else {
+            likeImageView.image = UIImage(named: "heart_outline")
+        }
+        likesLabel.text = "\(post.like_count ?? 0)"
     }
     
 }

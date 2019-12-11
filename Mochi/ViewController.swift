@@ -13,6 +13,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var feedTableView: UITableView!
     var posts : Array<Post>?
     
+    var visibleCellIndexPath : IndexPath?
+    var scrollingOutCell = -1
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +66,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let postCell = cell as? PostTableViewCell {
             postCell.stopVideo()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let indexPaths = feedTableView.indexPathsForVisibleRows
+        var cells = [PostTableViewCell]()
+        for indexPath in indexPaths!{
+            if let cell = self.feedTableView.cellForRow(at: indexPath) as? PostTableViewCell {
+                cells.append(cell)
+            }
+        }
+        let cellCount = cells.count
+        if cellCount == 0 {return}
+        else if cellCount == 1 {
+            if visibleCellIndexPath != indexPaths?[0]{
+                visibleCellIndexPath = indexPaths?[0]
+            }
+            if let cell = cells.last {
+                self.playVideoForCell(cell: cell)
+            }
+        }
+        else if cellCount >= 2 {
+            for i in 0..<cellCount{
+                let cellRect = self.feedTableView.rectForRow(at: (indexPaths?[i])!)
+                let intersectRect = cellRect.intersection(self.feedTableView.bounds)
+                let cellVisibleHeight = intersectRect.height
+                let cellHeight = (cells[i] as AnyObject).frame.size.height
+                if cellVisibleHeight > (cellHeight * 0.5){
+                    if visibleCellIndexPath != indexPaths?[i]{
+                        visibleCellIndexPath = indexPaths?[i]
+                        self.playVideoForCell(cell: cells[i])
+                    }
+                }
+                else{
+                    if scrollingOutCell != indexPaths?[i].row{
+                        scrollingOutCell = (indexPaths?[i].row)!
+                        self.pauseVideoOnCell(cell: cells[i])
+                    }
+                }
+            }
+        }
+    }
+    
+    func playVideoForCell(cell : PostTableViewCell){
+        cell.playVideo()
+    }
+    
+    func pauseVideoOnCell(cell : PostTableViewCell){
+        cell.stopVideo()
     }
 }
 
