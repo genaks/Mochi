@@ -32,6 +32,8 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        userImageView.layer.borderWidth = 2.0
+        userImageView.layer.borderColor = UIColor.white.cgColor
         setUpPlayerLayer()
     }
     
@@ -46,6 +48,11 @@ class PostTableViewCell: UITableViewCell {
                                            height: self.videoContainerView.frame.size.height)
         self.backgroundColor = .clear
         self.videoContainerView.layer.insertSublayer(avPlayerLayer!, at: 0)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.playerItemReachedEnd(notification:)),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: avPlayer?.currentItem)
     }
     
     func configureCellForPost(post : Post) {
@@ -62,6 +69,7 @@ class PostTableViewCell: UITableViewCell {
         else {
             likeImageView.image = UIImage(named: "heart_outline")
         }
+        userImageView.image = UIImage(named: post.user_image_url!)
     }
     
     func stopVideo(){
@@ -70,6 +78,11 @@ class PostTableViewCell: UITableViewCell {
     
     func playVideo(){
         self.avPlayer?.play()
+    }
+    
+    @objc func playerItemReachedEnd(notification: Notification) {
+        let playerItem: AVPlayerItem = notification.object as! AVPlayerItem
+        playerItem.seek(to: CMTime.zero, completionHandler: nil)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -11,6 +11,7 @@ import UIKit
 class Post: NSObject {
     public var post_id : Int?
     public var username : String?
+    public var user_image_url : String?
     public var captionText : String?
     public var like_count : Int?
     public var view_count : Int?
@@ -52,6 +53,7 @@ class Post: NSObject {
         
         post_id = dictionary["post_id"] as? Int
         username = dictionary["username"] as? String
+        user_image_url = dictionary["user_image_url"] as? String
         captionText = dictionary["captionText"] as? String
         like_count = dictionary["like_count"] as? Int
         view_count = dictionary["view_count"] as? Int
