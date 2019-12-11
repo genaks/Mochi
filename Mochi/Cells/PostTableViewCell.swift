@@ -46,7 +46,6 @@ class PostTableViewCell: UITableViewCell {
         
         avPlayerLayer?.frame = CGRect.init(x: 0, y: 0, width: self.videoContainerView.frame.width,
                                            height: self.videoContainerView.frame.size.height)
-        self.backgroundColor = .clear
         self.videoContainerView.layer.insertSublayer(avPlayerLayer!, at: 0)
         
         NotificationCenter.default.addObserver(self,

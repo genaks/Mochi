@@ -16,6 +16,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let titleImageView = UIImageView.init(image: UIImage(named: "Mochi"))
+        self.navigationItem.titleView = titleImageView
+        
         if let path = Bundle.main.path(forResource: "document", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
