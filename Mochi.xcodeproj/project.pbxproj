@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAB2BE4523A10052003567FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4423A10052003567FA /* AppDelegate.swift */; };
+		BAB2BE4723A10052003567FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4623A10052003567FA /* SceneDelegate.swift */; };
+		BAB2BE4923A10052003567FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4823A10052003567FA /* ViewController.swift */; };
+		BAB2BE4C23A10052003567FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB2BE4A23A10052003567FA /* Main.storyboard */; };
+		BAB2BE4E23A10057003567FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB2BE4D23A10057003567FA /* Assets.xcassets */; };
+		BAB2BE5123A10057003567FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB2BE4F23A10057003567FA /* LaunchScreen.storyboard */; };
+		BAB2BE5C23A10058003567FA /* MochiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE5B23A10058003567FA /* MochiTests.swift */; };
+		BAB2BE6723A10058003567FA /* MochiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE6623A10058003567FA /* MochiUITests.swift */; };
+		BAB2BE7523A10114003567FA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE7423A10114003567FA /* Post.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAB2BE5823A10058003567FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAB2BE3923A10052003567FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAB2BE4023A10052003567FA;
+			remoteInfo = Mochi;
+		};
+		BAB2BE6323A10058003567FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAB2BE3923A10052003567FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAB2BE4023A10052003567FA;
+			remoteInfo = Mochi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAB2BE4123A10052003567FA /* Mochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB2BE4423A10052003567FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BAB2BE4623A10052003567FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BAB2BE4823A10052003567FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BAB2BE4B23A10052003567FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAB2BE4D23A10057003567FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAB2BE5023A10057003567FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BAB2BE5223A10057003567FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAB2BE5723A10058003567FA /* MochiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MochiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB2BE5B23A10058003567FA /* MochiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiTests.swift; sourceTree = "<group>"; };
+		BAB2BE5D23A10058003567FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAB2BE6223A10058003567FA /* MochiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MochiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAB2BE6623A10058003567FA /* MochiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiUITests.swift; sourceTree = "<group>"; };
+		BAB2BE6823A10058003567FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAB2BE7423A10114003567FA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAB2BE3E23A10052003567FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE5423A10058003567FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE5F23A10058003567FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAB2BE3823A10052003567FA = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE4323A10052003567FA /* Mochi */,
+				BAB2BE5A23A10058003567FA /* MochiTests */,
+				BAB2BE6523A10058003567FA /* MochiUITests */,
+				BAB2BE4223A10052003567FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAB2BE4223A10052003567FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE4123A10052003567FA /* Mochi.app */,
+				BAB2BE5723A10058003567FA /* MochiTests.xctest */,
+				BAB2BE6223A10058003567FA /* MochiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAB2BE4323A10052003567FA /* Mochi */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE7623A1022C003567FA /* Models */,
+				BAB2BE4423A10052003567FA /* AppDelegate.swift */,
+				BAB2BE4623A10052003567FA /* SceneDelegate.swift */,
+				BAB2BE4823A10052003567FA /* ViewController.swift */,
+				BAB2BE4A23A10052003567FA /* Main.storyboard */,
+				BAB2BE4D23A10057003567FA /* Assets.xcassets */,
+				BAB2BE4F23A10057003567FA /* LaunchScreen.storyboard */,
+				BAB2BE5223A10057003567FA /* Info.plist */,
+			);
+			path = Mochi;
+			sourceTree = "<group>";
+		};
+		BAB2BE5A23A10058003567FA /* MochiTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE5B23A10058003567FA /* MochiTests.swift */,
+				BAB2BE5D23A10058003567FA /* Info.plist */,
+			);
+			path = MochiTests;
+			sourceTree = "<group>";
+		};
+		BAB2BE6523A10058003567FA /* MochiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE6623A10058003567FA /* MochiUITests.swift */,
+				BAB2BE6823A10058003567FA /* Info.plist */,
+			);
+			path = MochiUITests;
+			sourceTree = "<group>";
+		};
+		BAB2BE7623A1022C003567FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAB2BE7423A10114003567FA /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAB2BE4023A10052003567FA /* Mochi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB2BE6B23A10058003567FA /* Build configuration list for PBXNativeTarget "Mochi" */;
+			buildPhases = (
+				BAB2BE3D23A10052003567FA /* Sources */,
+				BAB2BE3E23A10052003567FA /* Frameworks */,
+				BAB2BE3F23A10052003567FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mochi;
+			productName = Mochi;
+			productReference = BAB2BE4123A10052003567FA /* Mochi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAB2BE5623A10058003567FA /* MochiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB2BE6E23A10058003567FA /* Build configuration list for PBXNativeTarget "MochiTests" */;
+			buildPhases = (
+				BAB2BE5323A10058003567FA /* Sources */,
+				BAB2BE5423A10058003567FA /* Frameworks */,
+				BAB2BE5523A10058003567FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAB2BE5923A10058003567FA /* PBXTargetDependency */,
+			);
+			name = MochiTests;
+			productName = MochiTests;
+			productReference = BAB2BE5723A10058003567FA /* MochiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BAB2BE6123A10058003567FA /* MochiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAB2BE7123A10058003567FA /* Build configuration list for PBXNativeTarget "MochiUITests" */;
+			buildPhases = (
+				BAB2BE5E23A10058003567FA /* Sources */,
+				BAB2BE5F23A10058003567FA /* Frameworks */,
+				BAB2BE6023A10058003567FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAB2BE6423A10058003567FA /* PBXTargetDependency */,
+			);
+			name = MochiUITests;
+			productName = MochiUITests;
+			productReference = BAB2BE6223A10058003567FA /* MochiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAB2BE3923A10052003567FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Akshay Jain";
+				TargetAttributes = {
+					BAB2BE4023A10052003567FA = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					BAB2BE5623A10058003567FA = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BAB2BE4023A10052003567FA;
+					};
+					BAB2BE6123A10058003567FA = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BAB2BE4023A10052003567FA;
+					};
+				};
+			};
+			buildConfigurationList = BAB2BE3C23A10052003567FA /* Build configuration list for PBXProject "Mochi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAB2BE3823A10052003567FA;
+			productRefGroup = BAB2BE4223A10052003567FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAB2BE4023A10052003567FA /* Mochi */,
+				BAB2BE5623A10058003567FA /* MochiTests */,
+				BAB2BE6123A10058003567FA /* MochiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAB2BE3F23A10052003567FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB2BE5123A10057003567FA /* LaunchScreen.storyboard in Resources */,
+				BAB2BE4E23A10057003567FA /* Assets.xcassets in Resources */,
+				BAB2BE4C23A10052003567FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE5523A10058003567FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE6023A10058003567FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAB2BE3D23A10052003567FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB2BE4923A10052003567FA /* ViewController.swift in Sources */,
+				BAB2BE4523A10052003567FA /* AppDelegate.swift in Sources */,
+				BAB2BE4723A10052003567FA /* SceneDelegate.swift in Sources */,
+				BAB2BE7523A10114003567FA /* Post.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE5323A10058003567FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB2BE5C23A10058003567FA /* MochiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAB2BE5E23A10058003567FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB2BE6723A10058003567FA /* MochiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAB2BE5923A10058003567FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAB2BE4023A10052003567FA /* Mochi */;
+			targetProxy = BAB2BE5823A10058003567FA /* PBXContainerItemProxy */;
+		};
+		BAB2BE6423A10058003567FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAB2BE4023A10052003567FA /* Mochi */;
+			targetProxy = BAB2BE6323A10058003567FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAB2BE4A23A10052003567FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAB2BE4B23A10052003567FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BAB2BE4F23A10057003567FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAB2BE5023A10057003567FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAB2BE6923A10058003567FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BAB2BE6A23A10058003567FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAB2BE6C23A10058003567FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = Mochi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.Mochi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAB2BE6D23A10058003567FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = Mochi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.Mochi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BAB2BE6F23A10058003567FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = MochiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.MochiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mochi.app/Mochi";
+			};
+			name = Debug;
+		};
+		BAB2BE7023A10058003567FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = MochiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.MochiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mochi.app/Mochi";
+			};
+			name = Release;
+		};
+		BAB2BE7223A10058003567FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = MochiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.MochiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mochi;
+			};
+			name = Debug;
+		};
+		BAB2BE7323A10058003567FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPW8A4TPTT;
+				INFOPLIST_FILE = MochiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.loveshark.MochiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mochi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAB2BE3C23A10052003567FA /* Build configuration list for PBXProject "Mochi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB2BE6923A10058003567FA /* Debug */,
+				BAB2BE6A23A10058003567FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB2BE6B23A10058003567FA /* Build configuration list for PBXNativeTarget "Mochi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB2BE6C23A10058003567FA /* Debug */,
+				BAB2BE6D23A10058003567FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB2BE6E23A10058003567FA /* Build configuration list for PBXNativeTarget "MochiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB2BE6F23A10058003567FA /* Debug */,
+				BAB2BE7023A10058003567FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAB2BE7123A10058003567FA /* Build configuration list for PBXNativeTarget "MochiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAB2BE7223A10058003567FA /* Debug */,
+				BAB2BE7323A10058003567FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAB2BE3923A10052003567FA /* Project object */;
+}
