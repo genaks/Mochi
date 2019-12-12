@@ -126,6 +126,9 @@
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.0"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="didClickPlayNow:" destination="adv-kf-icj" eventType="touchUpInside" id="owm-ki-KWv"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

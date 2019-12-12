@@ -18,6 +18,7 @@ class Post: NSObject {
     public var liked : Bool?
     public var video_url : URL!
     public var game_image_url : String?
+    public var game_link_url : String?
     
     /**
      Returns an array of models based on given dictionary.
@@ -60,5 +61,6 @@ class Post: NSObject {
         liked = dictionary["liked"] as? Bool
         video_url = URL(string: (dictionary["video_url"] as! String))
         game_image_url = dictionary["game_image_url"] as? String
+        game_link_url = dictionary["game_link_url"] as? String
     }
 }

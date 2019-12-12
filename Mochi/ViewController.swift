@@ -91,10 +91,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else if cellCount >= 2 {
             for i in 0..<cellCount{
-                let cellRect = self.feedTableView.rectForRow(at: (indexPaths?[i])!)
-                let intersectRect = cellRect.intersection(self.feedTableView.bounds)
-                let cellVisibleHeight = intersectRect.height
+                let cellVisibleHeight = getVisibleHeightForCellAtIndexPath(indexPath: (indexPaths?[i])!)
                 let cellHeight = (cells[i] as AnyObject).frame.size.height
+                
+//                if i == 0 {
+//                    //Handle scroll down case
+//                }
+//                else if i == cellCount - 1 {
+//                    //Handle scroll up case
+//                }
                 
 //                if (self.lastContentOffset > scrollView.contentOffset.y) {
 //                    print("Scrolling up")
@@ -134,6 +139,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func pauseVideoOnCell(cell : PostTableViewCell){
         cell.stopVideo()
+    }
+    
+    func getVisibleHeightForCellAtIndexPath(indexPath : IndexPath) -> CGFloat    {
+        let cellRect = self.feedTableView.rectForRow(at: indexPath)
+        let intersectRect = cellRect.intersection(self.feedTableView.bounds)
+        let cellVisibleHeight = intersectRect.height
+        return cellVisibleHeight
     }
 }
 

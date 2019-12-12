@@ -1,59 +1,65 @@
 {
-  "posts": [
-    {
-    "post_id": 1,
-    "username": "Jack",
-    "user_image_url" : "Jack",
-    "captionText": "TFW when I draw with lasers...",
-    "like_count" : 12,
-    "view_count" : 30,
-    "liked" : 0,
-    "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
-    "game_image_url" : "LD_Banner"
-  },
-  {
-    "post_id": 2,
-    "username": "Sparrow",
-    "user_image_url" : "Jack",
-    "captionText": "I LOVE TO DRAAAWWWWW",
-    "like_count" : 23,
-    "view_count" : 56,
-    "liked" : 1,
-    "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-        "game_image_url" : "LD_Banner"
-  },
-    {
-    "post_id": 3,
-    "username": "Jamie",
-    "user_image_url" : "Jamie",
-    "captionText": "I LOVE TO DANCE...",
-    "like_count" : 18,
-    "view_count" : 90,
-    "liked" : 0,
-    "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-        "game_image_url" : "DR_Banner"
-  },
-      {
-    "post_id": 4,
-    "username": "Oliver",
-    "user_image_url" : "Jamie",
-    "captionText": "So much fun drawing",
-    "like_count" : 65,
-    "view_count" : 109,
-    "liked" : 1,
-    "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-        "game_image_url" : "DR_Banner"
-  },
-      {
-    "post_id": 5,
-    "username": "Barbossa",
-    "user_image_url" : "Barbossa",
-    "captionText": "Aye aye, cap'n",
-    "like_count" : 99,
-    "view_count" : 1100,
-    "liked" : 1,
-    "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        "game_image_url" : "DR_Banner"
-  }
-  ]
+    "posts": [
+        {
+            "post_id": 1,
+            "username": "Jack",
+            "user_image_url" : "Jack",
+            "captionText": "TFW when I draw with lasers...",
+            "like_count" : 12,
+            "view_count" : 30,
+            "liked" : 0,
+            "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+            "game_image_url" : "LD_Banner",
+            "game_link_url" : "https://apps.apple.com/gb/app/laserdraw/id1434314899"
+        },
+        {
+            "post_id": 2,
+            "username": "Sparrow",
+            "user_image_url" : "Jack",
+            "captionText": "I LOVE TO DRAAAWWWWW",
+            "like_count" : 23,
+            "view_count" : 56,
+            "liked" : 1,
+            "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            "game_image_url" : "LD_Banner",
+            "game_link_url" : "https://apps.apple.com/gb/app/laserdraw/id1434314899"
+            
+        },
+        {
+            "post_id": 3,
+            "username": "Jamie",
+            "user_image_url" : "Jamie",
+            "captionText": "I LOVE TO DANCE...",
+            "like_count" : 18,
+            "view_count" : 90,
+            "liked" : 0,
+            "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            "game_image_url" : "DR_Banner",
+            "game_link_url" : "http://loveshark.io"
+        },
+        {
+            "post_id": 4,
+            "username": "Oliver",
+            "user_image_url" : "Jamie",
+            "captionText": "So much fun drawing",
+            "like_count" : 65,
+            "view_count" : 109,
+            "liked" : 1,
+            "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            "game_image_url" : "DR_Banner",
+            "game_link_url" : "http://loveshark.io"
+        },
+        {
+            "post_id": 5,
+            "username": "Barbossa",
+            "user_image_url" : "Barbossa",
+            "captionText": "Aye aye, cap'n",
+            "like_count" : 99,
+            "view_count" : 1100,
+            "liked" : 1,
+            "video_url" : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            "game_image_url" : "DR_Banner",
+            "game_link_url" : "http://loveshark.io"
+        }
+    ]
 }

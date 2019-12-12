@@ -46,7 +46,6 @@ class PostTableViewCell: UITableViewCell {
         
         HUD = JGProgressHUD(style: .dark)
         HUD.textLabel.text = ""
-        HUD.show(in: self.videoContainerView)
         
         setUpPlayerLayer()
         
@@ -82,6 +81,8 @@ class PostTableViewCell: UITableViewCell {
         gameImageView.image = UIImage(named: post.game_image_url!)
         setLikesForPost(post: post)
         userImageView.image = UIImage(named: post.user_image_url!)
+        
+        HUD.show(in: self.videoContainerView)
     }
     
     func stopVideo(){
@@ -149,16 +150,23 @@ class PostTableViewCell: UITableViewCell {
             
             switch status {
             case .readyToPlay:
-                print("Ready to play")
                 HUD.dismiss()
             case .failed:
-                print("Failed")
+                //show a failed icon
+                HUD.dismiss()
             case .unknown:
-                print("Unknown")
+                //show a question mark icon
+                HUD.dismiss()
             @unknown default:
+                //show a question mark icon
                 print("Unknown")
             }
         }
+    }
+    
+    @IBAction func didClickPlayNow(_ sender: Any) {
+        guard let url = URL(string: postItem.game_link_url!) else { return }
+        UIApplication.shared.open(url)
     }
     
 }
