@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import JGProgressHUD
 
 class PostTableViewCell: UITableViewCell {
     
@@ -32,12 +33,21 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likesView: UIView!
     
     var postItem : Post!
-
+    
+    var HUD : JGProgressHUD!
+    
+    private var playerItemContext = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         userImageView.layer.borderWidth = 2.0
         userImageView.layer.borderColor = UIColor.white.cgColor
+        
+        HUD = JGProgressHUD(style: .dark)
+        HUD.textLabel.text = ""
+        HUD.show(in: self.videoContainerView)
+        
         setUpPlayerLayer()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleLike(_:)))
@@ -59,11 +69,13 @@ class PostTableViewCell: UITableViewCell {
                                                selector: #selector(self.playerItemReachedEnd(notification:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: avPlayer?.currentItem)
+        
     }
     
     func configureCellForPost(post : Post) {
         postItem = post
         videoPlayerItem = AVPlayerItem.init(url : post.video_url)
+        self.videoPlayerItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerItemContext)
         usernameLabel.text = post.username;
         captionLabel.text = post.captionText;
         
@@ -74,6 +86,7 @@ class PostTableViewCell: UITableViewCell {
     
     func stopVideo(){
         self.avPlayer?.pause()
+        HUD.dismiss()
     }
     
     func playVideo(){
@@ -110,6 +123,42 @@ class PostTableViewCell: UITableViewCell {
             likeImageView.image = UIImage(named: "heart_outline")
         }
         likesLabel.text = "\(post.like_count ?? 0)"
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        
+        // Only handle observations for the playerItemContext
+        guard context == &playerItemContext else {
+            super.observeValue(forKeyPath: keyPath,
+                               of: object,
+                               change: change,
+                               context: context)
+            return
+        }
+        
+        if keyPath == #keyPath(AVPlayerItem.status) {
+            let status: AVPlayerItem.Status
+            if let statusNumber = change?[.newKey] as? NSNumber {
+                status = AVPlayerItem.Status(rawValue: statusNumber.intValue)!
+            } else {
+                status = .unknown
+            }
+            
+            switch status {
+            case .readyToPlay:
+                print("Ready to play")
+                HUD.dismiss()
+            case .failed:
+                print("Failed")
+            case .unknown:
+                print("Unknown")
+            @unknown default:
+                print("Unknown")
+            }
+        }
     }
     
 }
