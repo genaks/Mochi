@@ -15,9 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var visibleCellIndexPath : IndexPath?
     var scrollingOutCell = -1
+    var lastContentOffset : CGFloat!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lastContentOffset = 0.0
         
         let titleImageView = UIImageView.init(image: UIImage(named: "Mochi"))
         self.navigationItem.titleView = titleImageView
@@ -92,6 +95,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let intersectRect = cellRect.intersection(self.feedTableView.bounds)
                 let cellVisibleHeight = intersectRect.height
                 let cellHeight = (cells[i] as AnyObject).frame.size.height
+                
+//                if (self.lastContentOffset > scrollView.contentOffset.y) {
+//                    print("Scrolling up")
+//                    if i == 0 {
+//                        continue
+//                    }
+//                    else {
+//
+//                    }
+//                } else if (self.lastContentOffset < scrollView.contentOffset.y) {
+//                    print("Scrolling down")
+//                    if i == cellCount - 1 {
+//                        continue
+//                    }
+//                }
+                self.lastContentOffset = scrollView.contentOffset.y;
+                
                 if cellVisibleHeight > (cellHeight * 0.5){
                     if visibleCellIndexPath != indexPaths?[i]{
                         visibleCellIndexPath = indexPaths?[i]
