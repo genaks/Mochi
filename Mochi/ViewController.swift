@@ -13,10 +13,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var feedTableView: UITableView!
     var posts : Array<Post>?
     
-    var visibleCellIndexPath : IndexPath?
-    var scrollingOutCell = -1
+    var activeCellIndexPath : IndexPath?
+    var goingInactiveCell = -1
     var lastContentOffset : CGFloat!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,8 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cellCount = cells.count
         if cellCount == 0 {return}
         else if cellCount == 1 {
-            if visibleCellIndexPath != indexPaths?[0]{
-                visibleCellIndexPath = indexPaths?[0]
+            if activeCellIndexPath != indexPaths?[0]{
+                activeCellIndexPath = indexPaths?[0]
             }
             if let cell = cells.last {
                 self.playVideoForCell(cell: cell)
@@ -91,44 +91,56 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else if cellCount >= 2 {
             for i in 0..<cellCount{
-                let cellVisibleHeight = getVisibleHeightForCellAtIndexPath(indexPath: (indexPaths?[i])!)
-                let cellHeight = (cells[i] as AnyObject).frame.size.height
                 
-//                if i == 0 {
-//                    //Handle scroll down case
-//                }
-//                else if i == cellCount - 1 {
-//                    //Handle scroll up case
-//                }
-                
-//                if (self.lastContentOffset > scrollView.contentOffset.y) {
-//                    print("Scrolling up")
-//                    if i == 0 {
-//                        continue
-//                    }
-//                    else {
-//
-//                    }
-//                } else if (self.lastContentOffset < scrollView.contentOffset.y) {
-//                    print("Scrolling down")
-//                    if i == cellCount - 1 {
-//                        continue
-//                    }
-//                }
+                if (self.lastContentOffset > scrollView.contentOffset.y) { //Scrolling up
+                    if i == 0 { //Skip if it is the first visible cell
+                        continue
+                    }
+                    else {
+                        
+                        let cellVisibleHeight = getVisibleHeightForCellAtIndexPath(indexPath: (indexPaths?[i - 1])!)
+                        let cellHeight = (cells[i - 1] as AnyObject).frame.size.height
+                        if cellVisibleHeight > (cellHeight * 0.5){
+                            
+                            if activeCellIndexPath != indexPaths?[i - 1]{
+                                //Make incoming cell active
+                                activeCellIndexPath = indexPaths?[i - 1]
+                                self.playVideoForCell(cell: cells[i - 1])
+                                
+                                if goingInactiveCell != indexPaths?[i].row{
+                                    //Make going out cell inactive
+                                    goingInactiveCell = (indexPaths?[i].row)!
+                                    self.pauseVideoOnCell(cell: cells[i])
+                                    
+                                }
+                            }
+                        }
+                    }
+                } else if (self.lastContentOffset < scrollView.contentOffset.y) { //Scrolling down
+                    
+                    if i == cellCount - 1 { //Skip if it is the last visible cell
+                        continue
+                    }
+                    else {
+                        let cellVisibleHeight = getVisibleHeightForCellAtIndexPath(indexPath: (indexPaths?[i + 1])!)
+                        let cellHeight = (cells[i + 1] as AnyObject).frame.size.height
+                        if cellVisibleHeight > (cellHeight * 0.5){
+                            
+                            if activeCellIndexPath != indexPaths?[i + 1]{
+                                //Make incoming cell active
+                                activeCellIndexPath = indexPaths?[i + 1]
+                                self.playVideoForCell(cell: cells[i + 1])
+                                
+                                if goingInactiveCell != indexPaths?[i].row{
+                                    //Make going out cell inactive
+                                    goingInactiveCell = (indexPaths?[i].row)!
+                                    self.pauseVideoOnCell(cell: cells[i])
+                                }
+                            }
+                        }
+                    }
+                }
                 self.lastContentOffset = scrollView.contentOffset.y;
-                
-                if cellVisibleHeight > (cellHeight * 0.5){
-                    if visibleCellIndexPath != indexPaths?[i]{
-                        visibleCellIndexPath = indexPaths?[i]
-                        self.playVideoForCell(cell: cells[i])
-                    }
-                }
-                else{
-                    if scrollingOutCell != indexPaths?[i].row{
-                        scrollingOutCell = (indexPaths?[i].row)!
-                        self.pauseVideoOnCell(cell: cells[i])
-                    }
-                }
             }
         }
     }
