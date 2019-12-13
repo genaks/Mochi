@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var activeCellIndexPath : IndexPath?
     var goingInactiveCell = -1
     var lastContentOffset : CGFloat!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +56,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.feedTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         cell.configureCellForPost(post: posts![indexPath.row])
+        if indexPath.row == 0 {
+            cell.playVideo()
+        }
+        else {
+            cell.stopVideo()
+        }
         return cell
     }
     
