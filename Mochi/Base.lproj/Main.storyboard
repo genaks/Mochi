@@ -28,9 +28,34 @@
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-bX-uRP" customClass="VideoView" customModule="Mochi" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="11" width="374" height="561"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.31423305457746481" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Ghl-bX-uRP" secondAttribute="height" multiplier="10:15" id="fgz-bV-vhf"/>
+                                                    </constraints>
+                                                </view>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2d-Id-3ip">
+                                                    <rect key="frame" x="20" y="11" width="374" height="461"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Error" translatesAutoresizingMaskIntoConstraints="NO" id="LKP-pG-Qj5">
+                                                            <rect key="frame" x="162" y="205.5" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="39E-MS-DoT"/>
+                                                                <constraint firstAttribute="height" constant="50" id="X0F-CJ-tsv"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed to load video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qr-bD-UAK">
+                                                            <rect key="frame" x="113" y="271.5" width="148" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="2qr-bD-UAK" firstAttribute="top" secondItem="LKP-pG-Qj5" secondAttribute="bottom" constant="16" id="Lwf-T5-Okg"/>
+                                                        <constraint firstItem="LKP-pG-Qj5" firstAttribute="centerX" secondItem="B2d-Id-3ip" secondAttribute="centerX" id="gPL-wf-2iN"/>
+                                                        <constraint firstItem="LKP-pG-Qj5" firstAttribute="centerY" secondItem="B2d-Id-3ip" secondAttribute="centerY" id="iKE-hH-I25"/>
+                                                        <constraint firstItem="2qr-bD-UAK" firstAttribute="centerX" secondItem="B2d-Id-3ip" secondAttribute="centerX" id="pvR-VF-Y5Z"/>
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Nt-OW-P0s" userLabel="Post Info View">
@@ -157,6 +182,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="1Nt-OW-P0s" firstAttribute="top" secondItem="B2d-Id-3ip" secondAttribute="bottom" id="3ze-qf-0xB"/>
+                                                <constraint firstItem="B2d-Id-3ip" firstAttribute="leading" secondItem="Ghl-bX-uRP" secondAttribute="leading" id="50i-xc-yD1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jwq-Gt-rTc" secondAttribute="trailing" id="9Df-5R-HVQ"/>
                                                 <constraint firstItem="jwq-Gt-rTc" firstAttribute="top" secondItem="Ghl-bX-uRP" secondAttribute="bottom" id="BHW-Pv-jwM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ghl-bX-uRP" secondAttribute="trailing" id="CLY-kz-8U1"/>
@@ -164,12 +191,14 @@
                                                 <constraint firstItem="1Nt-OW-P0s" firstAttribute="leading" secondItem="Q7z-gi-6hN" secondAttribute="leadingMargin" id="HjN-zc-EDN"/>
                                                 <constraint firstItem="Ghl-bX-uRP" firstAttribute="leading" secondItem="Q7z-gi-6hN" secondAttribute="leadingMargin" id="Jgz-JV-2Ox"/>
                                                 <constraint firstItem="Ghl-bX-uRP" firstAttribute="top" secondItem="Q7z-gi-6hN" secondAttribute="topMargin" id="Oel-4D-wxu"/>
+                                                <constraint firstItem="B2d-Id-3ip" firstAttribute="top" secondItem="Ghl-bX-uRP" secondAttribute="top" id="PYD-yO-qXd"/>
                                                 <constraint firstAttribute="bottom" secondItem="MiR-NP-9LO" secondAttribute="bottom" constant="10" id="Pes-U0-nvv"/>
                                                 <constraint firstItem="MiR-NP-9LO" firstAttribute="centerX" secondItem="Q7z-gi-6hN" secondAttribute="centerX" id="Wmj-e1-1qg"/>
                                                 <constraint firstItem="jwq-Gt-rTc" firstAttribute="top" secondItem="1Nt-OW-P0s" secondAttribute="bottom" id="YuB-kd-ZPS"/>
                                                 <constraint firstItem="MiR-NP-9LO" firstAttribute="width" secondItem="Q7z-gi-6hN" secondAttribute="width" multiplier="0.577295" id="ZB9-bV-981"/>
                                                 <constraint firstItem="jwq-Gt-rTc" firstAttribute="leading" secondItem="Q7z-gi-6hN" secondAttribute="leadingMargin" id="irL-1G-ygJ"/>
                                                 <constraint firstItem="MiR-NP-9LO" firstAttribute="top" secondItem="jwq-Gt-rTc" secondAttribute="bottom" constant="20" id="rbu-UR-kFp"/>
+                                                <constraint firstItem="B2d-Id-3ip" firstAttribute="trailing" secondItem="Ghl-bX-uRP" secondAttribute="trailing" id="y3H-xL-27r"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10.0"/>
@@ -181,6 +210,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="captionLabel" destination="pTa-w2-I7H" id="7sZ-lt-47w"/>
+                                            <outlet property="errorView" destination="B2d-Id-3ip" id="vkd-eY-vJs"/>
                                             <outlet property="gameImageView" destination="wjT-lY-c5U" id="R6j-wX-Gwt"/>
                                             <outlet property="likeImageView" destination="ryz-06-wCz" id="p3Y-bQ-GwI"/>
                                             <outlet property="likesLabel" destination="uNC-5y-vvy" id="amV-M9-JC3"/>
@@ -235,4 +265,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Error" width="21" height="21"/>
+    </resources>
 </document>

@@ -10,7 +10,9 @@
 		3A8ACF3C59D15A5F490859B9 /* Pods_Mochi_MochiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB0FC1D40380DB941E2F874 /* Pods_Mochi_MochiUITests.framework */; };
 		71751B2E65FFF05B27D93696 /* Pods_Mochi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443888335616143DE9CE7294 /* Pods_Mochi.framework */; };
 		7A8BE14AD3C26B3DD7C872A0 /* Pods_MochiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6982A71DB3561DDECCADC199 /* Pods_MochiTests.framework */; };
-		BA2BBEA323A11F21000E8428 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = BA2BBEA223A11F21000E8428 /* document.json */; };
+		BA2BBEA523A3A540000E8428 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BBEA423A3A540000E8428 /* Game.swift */; };
+		BA2BBEA723A3A549000E8428 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BBEA623A3A549000E8428 /* User.swift */; };
+		BA2BBEA923A3A7C8000E8428 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = BA2BBEA823A3A7C8000E8428 /* document.json */; };
 		BAB2BE4523A10052003567FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4423A10052003567FA /* AppDelegate.swift */; };
 		BAB2BE4723A10052003567FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4623A10052003567FA /* SceneDelegate.swift */; };
 		BAB2BE4923A10052003567FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2BE4823A10052003567FA /* ViewController.swift */; };
@@ -50,7 +52,9 @@
 		6982A71DB3561DDECCADC199 /* Pods_MochiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MochiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9620D54149FC0E79C4352D7D /* Pods-Mochi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mochi.debug.xcconfig"; path = "Target Support Files/Pods-Mochi/Pods-Mochi.debug.xcconfig"; sourceTree = "<group>"; };
 		A1405CF28031EF63F32C8E83 /* Pods-Mochi-MochiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mochi-MochiUITests.release.xcconfig"; path = "Target Support Files/Pods-Mochi-MochiUITests/Pods-Mochi-MochiUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BA2BBEA223A11F21000E8428 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
+		BA2BBEA423A3A540000E8428 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BA2BBEA623A3A549000E8428 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA2BBEA823A3A7C8000E8428 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
 		BAB2BE4123A10052003567FA /* Mochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB2BE4423A10052003567FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAB2BE4623A10052003567FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,7 +158,7 @@
 				BAB2BE4D23A10057003567FA /* Assets.xcassets */,
 				BAB2BE4F23A10057003567FA /* LaunchScreen.storyboard */,
 				BAB2BE5223A10057003567FA /* Info.plist */,
-				BA2BBEA223A11F21000E8428 /* document.json */,
+				BA2BBEA823A3A7C8000E8428 /* document.json */,
 			);
 			path = Mochi;
 			sourceTree = "<group>";
@@ -181,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				BAB2BE7423A10114003567FA /* Post.swift */,
+				BA2BBEA423A3A540000E8428 /* Game.swift */,
+				BA2BBEA623A3A549000E8428 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,7 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA2BBEA323A11F21000E8428 /* document.json in Resources */,
+				BA2BBEA923A3A7C8000E8428 /* document.json in Resources */,
 				BAB2BE5123A10057003567FA /* LaunchScreen.storyboard in Resources */,
 				BAB2BE4E23A10057003567FA /* Assets.xcassets in Resources */,
 				BAB2BE4C23A10052003567FA /* Main.storyboard in Resources */,
@@ -434,10 +440,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB2BE4923A10052003567FA /* ViewController.swift in Sources */,
+				BA2BBEA523A3A540000E8428 /* Game.swift in Sources */,
 				BAB2BE4523A10052003567FA /* AppDelegate.swift in Sources */,
 				BAD9D1AC23A103A8009E488E /* PostTableViewCell.swift in Sources */,
 				BAB2BE4723A10052003567FA /* SceneDelegate.swift in Sources */,
 				BAB2BE7523A10114003567FA /* Post.swift in Sources */,
+				BA2BBEA723A3A549000E8428 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var activeCellIndexPath : IndexPath?
     var goingInactiveCell = -1
     var lastContentOffset : CGFloat!
+    
+    var activeCellDict : [Int : Bool] = [:]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
     }
     
+    // MARK: Table view.
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts!.count
     }
@@ -57,26 +61,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = self.feedTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         cell.configureCellForPost(post: posts![indexPath.row])
         if indexPath.row == 0 {
-            cell.playVideo()
+            activeCellDict[indexPath.row] = true
         }
         else {
-            cell.stopVideo()
+            activeCellDict[indexPath.row] = false
         }
+        cell.active = activeCellDict[indexPath.row]!
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let postCell = cell as? PostTableViewCell {
-            postCell.playVideo()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let postCell = cell as? PostTableViewCell {
-            postCell.stopVideo()
-        }
-    }
-    
+        
+    // MARK: Scroll view.
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let indexPaths = feedTableView.indexPathsForVisibleRows
         var cells = [PostTableViewCell]()
@@ -112,12 +107,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                 //Make incoming cell active
                                 activeCellIndexPath = indexPaths?[i - 1]
                                 self.playVideoForCell(cell: cells[i - 1])
+                                cells[i - 1].active = true
                                 
                                 if goingInactiveCell != indexPaths?[i].row{
                                     //Make going out cell inactive
                                     goingInactiveCell = (indexPaths?[i].row)!
                                     self.pauseVideoOnCell(cell: cells[i])
-                                    
+                                    cells[i].active = false
                                 }
                             }
                         }
@@ -136,11 +132,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                 //Make incoming cell active
                                 activeCellIndexPath = indexPaths?[i + 1]
                                 self.playVideoForCell(cell: cells[i + 1])
-                                
+                                cells[i + 1].active = true
+
                                 if goingInactiveCell != indexPaths?[i].row{
                                     //Make going out cell inactive
                                     goingInactiveCell = (indexPaths?[i].row)!
                                     self.pauseVideoOnCell(cell: cells[i])
+                                    cells[i].active = false
                                 }
                             }
                         }
@@ -151,6 +149,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    // MARK: Video controls.
+
     func playVideoForCell(cell : PostTableViewCell){
         cell.playVideo()
     }
@@ -158,6 +158,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func pauseVideoOnCell(cell : PostTableViewCell){
         cell.stopVideo()
     }
+    
+    // MARK: Helpers.
     
     func getVisibleHeightForCellAtIndexPath(indexPath : IndexPath) -> CGFloat    {
         let cellRect = self.feedTableView.rectForRow(at: indexPath)

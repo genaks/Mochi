@@ -10,16 +10,13 @@ import UIKit
 
 class Post: NSObject {
     public var post_id : Int?
-    public var username : String?
-    public var user_image_url : String?
     public var captionText : String?
     public var like_count : Int?
     public var view_count : Int?
     public var liked : Bool?
     public var video_url : URL!
-    public var game_image_url : String?
-    public var game_link_url : String?
-    
+    public var game : Game?
+    public var user : User?
     /**
      Returns an array of models based on given dictionary.
      
@@ -53,14 +50,16 @@ class Post: NSObject {
     required public init?(dictionary: [String: Any]) {
         
         post_id = dictionary["post_id"] as? Int
-        username = dictionary["username"] as? String
-        user_image_url = dictionary["user_image_url"] as? String
         captionText = dictionary["captionText"] as? String
         like_count = dictionary["like_count"] as? Int
         view_count = dictionary["view_count"] as? Int
         liked = dictionary["liked"] as? Bool
         video_url = URL(string: (dictionary["video_url"] as! String))
-        game_image_url = dictionary["game_image_url"] as? String
-        game_link_url = dictionary["game_link_url"] as? String
+        if let game_object = dictionary["game"] as? [String : Any] {
+            game = Game(dictionary: game_object)
+        }
+        if let user_object = dictionary["user"] as? [String : Any] {
+            user = User(dictionary: user_object)
+        }
     }
 }

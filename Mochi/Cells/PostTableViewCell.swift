@@ -31,12 +31,15 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     
     @IBOutlet weak var likesView: UIView!
-    
+    @IBOutlet weak var errorView: UIView!
+
     var postItem : Post!
     
     var HUD : JGProgressHUD!
     
     private var playerItemContext = 0
+    
+    var active = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,16 +78,18 @@ class PostTableViewCell: UITableViewCell {
         postItem = post
         videoPlayerItem = AVPlayerItem.init(url : post.video_url)
         self.videoPlayerItem!.addObserver(self, forKeyPath: #keyPath(AVPlayerItem.status), options: [.old, .new], context: &playerItemContext)
-        usernameLabel.text = post.username;
+        usernameLabel.text = post.user!.username;
         captionLabel.text = post.captionText;
         
-        gameImageView.image = UIImage(named: post.game_image_url!)
+        gameImageView.image = UIImage(named: post.game!.game_image_url!)
         setLikesForPost(post: post)
-        userImageView.image = UIImage(named: post.user_image_url!)
+        userImageView.image = UIImage(named: post.user!.user_image_url!)
         
         HUD.show(in: self.videoContainerView)
     }
     
+    // MARK: Video Controls.
+
     func stopVideo(){
         self.avPlayer?.pause()
         HUD.dismiss()
@@ -99,32 +104,7 @@ class PostTableViewCell: UITableViewCell {
         playerItem.seek(to: CMTime.zero, completionHandler: nil)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    @objc func toggleLike(_ sender: UITapGestureRecognizer? = nil) {
-        if postItem.liked! {
-            postItem.like_count! -= 1
-        }
-        else {
-            postItem.like_count! += 1
-        }
-        postItem.liked = !postItem.liked!
-        setLikesForPost(post: postItem)
-    }
-    
-    func setLikesForPost(post : Post) {
-        if post.liked! {
-            likeImageView.image = UIImage(named: "heart_filled")
-        }
-        else {
-            likeImageView.image = UIImage(named: "heart_outline")
-        }
-        likesLabel.text = "\(post.like_count ?? 0)"
-    }
+    // MARK: KV Observer.
     
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
@@ -150,11 +130,20 @@ class PostTableViewCell: UITableViewCell {
             
             switch status {
             case .readyToPlay:
+                errorView.isHidden = true
                 HUD.dismiss()
+                if active {
+                    playVideo()
+                }
+                else {
+                    stopVideo()
+                }
             case .failed:
+                errorView.isHidden = false
                 //show a failed icon
                 HUD.dismiss()
             case .unknown:
+                errorView.isHidden = false
                 //show a question mark icon
                 HUD.dismiss()
             @unknown default:
@@ -164,9 +153,31 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: Call to actions.
+    
     @IBAction func didClickPlayNow(_ sender: Any) {
-        guard let url = URL(string: postItem.game_link_url!) else { return }
+        guard let url = URL(string: postItem.game!.game_link_url!) else { return }
         UIApplication.shared.open(url)
     }
     
+    @objc func toggleLike(_ sender: UITapGestureRecognizer? = nil) {
+        if postItem.liked! {
+            postItem.like_count! -= 1
+        }
+        else {
+            postItem.like_count! += 1
+        }
+        postItem.liked = !postItem.liked!
+        setLikesForPost(post: postItem)
+    }
+    
+    func setLikesForPost(post : Post) {
+        if post.liked! {
+            likeImageView.image = UIImage(named: "heart_filled")
+        }
+        else {
+            likeImageView.image = UIImage(named: "heart_outline")
+        }
+        likesLabel.text = "\(post.like_count ?? 0)"
+    }
 }
