@@ -140,14 +140,11 @@ class PostTableViewCell: UITableViewCell {
                 }
             case .failed:
                 errorView.isHidden = false
-                //show a failed icon
                 HUD.dismiss()
             case .unknown:
                 errorView.isHidden = false
-                //show a question mark icon
                 HUD.dismiss()
             @unknown default:
-                //show a question mark icon
                 print("Unknown")
             }
         }
