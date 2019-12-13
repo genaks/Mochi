@@ -197,7 +197,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="q0x-yi-VXW" secondAttribute="bottom" id="Hq7-rF-uCe"/>
                             <constraint firstItem="q0x-yi-VXW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="InM-gI-T3Q"/>
