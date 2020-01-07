@@ -11,3 +11,9 @@ Steps to deploy to a simulator -
 4. Run
 
 Technical design - The app adopts Instagram style scrolling mechanism where if two cells are equally visible on the screen, the direction of the scroll would determine which cell is playing its video.
+
+Things to be taken away from this project -
+
+1. Custom UITableViewCells
+2. AVPlayer in UITableViewCells
+3. Reading from a JSON and parsing into NSObjects.
